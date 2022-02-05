@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install nmap
+    apt:
+        name: 
+        - nmap
+        - mc
+        - aircrack-ng
+        update_cache: yes
+        state: latest
