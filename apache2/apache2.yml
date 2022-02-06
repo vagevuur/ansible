@@ -1,0 +1,14 @@
+---
+- hosts: web
+  become: true
+  tasks:
+  - name: Install apache2 Ubuntu
+    apt:
+        name: apache2
+        update_cache: yes
+        state: latest
+
+  - name: Copy the index file personolized for testing HAProxy
+    template:
+       src: index.html.j2
+       dest: /var/www/html/index.html
