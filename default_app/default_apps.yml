@@ -2,16 +2,16 @@
 - hosts: all
   become: true
   tasks:
-  - name: Install nmap
+  - name: Install nmap, mc and aircrack-ng
     apt:
       name: 
-      - nmap
-      - mc
-      - aircrack-ng
+        - nmap
+        - mc
+        - aircrack-ng
       update_cache: yes
       state: latest
-        
-  - name: Copy handy files
+
+  - name: Copy vimrc file for vim
     template:
       src: vimrc.j2
       dest: /home/ubuntu/.vimrc
