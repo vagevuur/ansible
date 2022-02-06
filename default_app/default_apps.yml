@@ -4,9 +4,16 @@
   tasks:
   - name: Install nmap
     apt:
-        name: 
-        - nmap
-        - mc
-        - aircrack-ng
-        update_cache: yes
-        state: latest
+      name: 
+      - nmap
+      - mc
+      - aircrack-ng
+      update_cache: yes
+      state: latest
+        
+  - name: Copy handy files
+    template:
+      src: vimrc.j2
+      dest: /home/ubuntu/.vimrc
+      owner: ubuntu
+      group: ubuntu
