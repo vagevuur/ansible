@@ -8,6 +8,9 @@
         - nmap
         - mc
         - aircrack-ng
+        - cmatrix
+        - traceroute
+        - lynx
       update_cache: yes
       state: latest
 
